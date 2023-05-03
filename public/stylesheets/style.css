@@ -1,8 +1,17 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+.line {
+  border-style: dotted;
+  border-color: red;
 }
-
-a {
-  color: #00B7FF;
+.playground {
+  height: 75vh;
+  width: 100vw;
+  display: flex;
+}
+.play {
+  height: 100%;
+  width: 50%;
+}
+.mission {
+  height: 25vh;
+  width: 100vw;
 }
