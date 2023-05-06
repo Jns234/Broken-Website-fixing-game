@@ -11,6 +11,11 @@
   <link rel="stylesheet" type="text/css" href="../codemirror/addon/hint/show-hint.css">
   <script type="application/javascript" src="../codemirror/lib/codemirror.js"></script>
   <script type="application/javascript" src="javascripts/editor.js"></script>
+  <script type="application/javascript" src="javascripts/editorSelector.js"></script>
+  <script type="application/javascript" src="javascripts/tasks.js"></script>
+  <script type="application/javascript" src="javascripts/checkTask.js"></script>
+  <script type="application/javascript" src="javascripts/updateOutput.js"></script>
+  <script type="application/javascript" src="javascripts/file.js"></script>
   <script type="application/javascript" src="../codemirror/addon/hint/show-hint.js"></script>
   <script type="application/javascript" src="../codemirror/addon/hint/xml-hint.js"></script>
   <script type="application/javascript" src="../codemirror/addon/hint/html-hint.js"></script>
@@ -23,12 +28,29 @@
 <body>
   <div class="playground" style="position:relative;">
     <div class="play line">
-      <textarea id="editor" placeholder="yes"></textarea>
-      <textarea id="editorCSS" placeholder="yes"></textarea>
+      <div class="editor-select">
+        <button id="editor-btn">Editor</button>
+        <button id="editorCSS-btn">CSS</button>
+
+      </div>
+      <div id="editor-parent">
+        <textarea id="editor" placeholder="yes"></textarea>
+      </div>
+      <div id="editorCSS-parent">
+        <textarea id="editorCSS" placeholder="yes"></textarea>
+      </div>
     </div>
     <div id="output" style="max-height:100%;overflow:auto;" class="play line"></div>
   </div>
-  <div class="line mission"></div>
+  <div class="line mission">
+    <div class="line task">
+      <p>Task: <span id="taskNumber"></span></p>
+      <p id="taskDescription"></p>
+    </div>
+    <div class="line buttons">
+      <button id="checkTask">check</button>
+    </div>
+  </div>
 </body>
 
 </html>

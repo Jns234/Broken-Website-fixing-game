@@ -14,4 +14,14 @@
 .mission {
   height: 25vh;
   width: 100vw;
+  display: flex;
+}
+.task {
+  height: 100%;
+  width: 80%;
+}
+
+.buttons {
+  height: 100%;
+  width: 20%;
 }
