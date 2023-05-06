@@ -16,6 +16,7 @@
   <script type="application/javascript" src="javascripts/checkTask.js"></script>
   <script type="application/javascript" src="javascripts/updateOutput.js"></script>
   <script type="application/javascript" src="javascripts/file.js"></script>
+  <script type="application/javascript" src="javascripts/javascript.js"></script>
   <script type="application/javascript" src="../codemirror/addon/hint/show-hint.js"></script>
   <script type="application/javascript" src="../codemirror/addon/hint/xml-hint.js"></script>
   <script type="application/javascript" src="../codemirror/addon/hint/html-hint.js"></script>
@@ -29,8 +30,9 @@
   <div class="playground" style="position:relative;">
     <div class="play line">
       <div class="editor-select">
-        <button id="editor-btn">Editor</button>
-        <button id="editorCSS-btn">CSS</button>
+        <button id="editor-btn">index.html</button>
+        <button id="editorCSS-btn">style.css</button>
+        <button id="editorJS-btn">index.js</button>
 
       </div>
       <div id="editor-parent">
@@ -38,6 +40,9 @@
       </div>
       <div id="editorCSS-parent">
         <textarea id="editorCSS" placeholder="yes"></textarea>
+      </div>
+      <div id="editorJS-parent">
+        <textarea id="editorJS" placeholder="yes"></textarea>
       </div>
     </div>
     <div id="output" style="max-height:100%;overflow:auto;" class="play line"></div>
@@ -49,6 +54,7 @@
     </div>
     <div class="line buttons">
       <button id="checkTask">check</button>
+      <button id="run-code">Run Code</button>
     </div>
   </div>
 </body>
