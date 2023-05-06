@@ -2,6 +2,6 @@ Vigase veebilehe Koodi parandamise mäng. Osa minu lõputööst Tallinna Polüte
 
 Kuidas käima saada:
 
-Installi npm paketid: ´npm i´
+Installi npm paketid: `npm i`
 
-pane käima: ´npm start´
+pane käima: `npm start`
