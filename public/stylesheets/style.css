@@ -1,6 +1,5 @@
 .line {
-  border-style: dotted;
-  border-color: red;
+border: 1px solid #bfbfbf !important;
 }
 .playground {
   height: 75vh;
@@ -24,4 +23,24 @@
 .buttons {
   height: 100%;
   width: 20%;
+}
+.edit {
+  height: 100%;
+}
+.CodeMirror {
+  height: 97% !important;
+}
+.btn {
+  background-color: #ADD8E6; 
+  border: none;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 100%;
+  width: 100%;
+}
+.editor-select {
+  display: flex;
+  justify-content: space-evenly;
 }

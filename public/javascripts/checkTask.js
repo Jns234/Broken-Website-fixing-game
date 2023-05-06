@@ -15,6 +15,8 @@ function checkTask(task) {
     } else {
       // If there are no more tasks, show a message
       console.log("All tasks completed!");
+      updateTaskDescription(currentTaskIndex);
+      
     }
   } else {
     console.log("Task " + task.id + " failed. Expected " + expectedValue + ", got " + actualValue);

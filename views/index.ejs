@@ -24,25 +24,28 @@
   <script type="application/javascript" src="../codemirror/mode/javascript/javascript.js"></script>
   <script type="application/javascript" src="../codemirror/mode/css/css.js"></script>
   <script type="application/javascript" src="../codemirror/mode/htmlmixed/htmlmixed.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/theme/material.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.2/mode/htmlmixed/htmlmixed.min.js"></script>
+  
 </head>
 
 <body>
   <div class="playground" style="position:relative;">
     <div class="play line">
       <div class="editor-select">
-        <button id="editor-btn">index.html</button>
-        <button id="editorCSS-btn">style.css</button>
-        <button id="editorJS-btn">index.js</button>
+        <button id="editor-btn" class="btn line">index.html</button>
+        <button id="editorCSS-btn" class="btn line">style.css</button>
+        <button id="editorJS-btn" class="btn line">index.js</button>
 
       </div>
-      <div id="editor-parent">
-        <textarea id="editor" placeholder="yes"></textarea>
+      <div id="editor-parent" class="edit">
+        <textarea id="editor"  placeholder="yes"></textarea>
       </div>
-      <div id="editorCSS-parent">
-        <textarea id="editorCSS" placeholder="yes"></textarea>
+      <div id="editorCSS-parent" class="edit">
+        <textarea id="editorCSS"  placeholder="yes"></textarea>
       </div>
-      <div id="editorJS-parent">
-        <textarea id="editorJS" placeholder="yes"></textarea>
+      <div id="editorJS-parent" class="edit">
+        <textarea id="editorJS"  placeholder="yes"></textarea>
       </div>
     </div>
     <div id="output" style="max-height:100%;overflow:auto;" class="play line"></div>

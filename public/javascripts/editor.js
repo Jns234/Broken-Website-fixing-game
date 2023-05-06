@@ -4,17 +4,17 @@ window.onload = function () {
   const editorJSBtn = document.getElementById('editorJS-btn');
   editor = CodeMirror.fromTextArea(document.getElementById("editor"), {
       lineNumbers: true,
-      theme: "default",
-      mode: "html"
+      theme: "material",
+      mode: "htmlmixed"
   });
   editorCSS = CodeMirror.fromTextArea(document.getElementById("editorCSS"), {
       lineNumbers: true,
-      theme: "default",
+      theme: "material",
       mode: "css"
   });
   editorJS = CodeMirror.fromTextArea(document.getElementById("editorJS"), {
     lineNumbers: true,
-    theme: "default",
+    theme: "material",
     mode: "javascript"
 });
 
