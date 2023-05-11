@@ -20,6 +20,10 @@ function editorSelector() {
         editorCSS.style.display = 'none';
         editorJS.style.display = 'none';
 
+        editorBtn.style.backgroundColor = '#ADD8E6';
+        editorCSSBtn.style.backgroundColor = 'white';
+        editorJSBtn.style.backgroundColor = 'white';
+
     });
 
     // show editorCSS and hide editor when editorCSS button is pressed
@@ -28,11 +32,19 @@ function editorSelector() {
         editorCSS.style.display = 'block';
         editorJS.style.display = 'none';
 
+        editorBtn.style.backgroundColor = 'white';
+        editorCSSBtn.style.backgroundColor = '#ADD8E6';
+        editorJSBtn.style.backgroundColor = 'white';
+
     });
     editorJSBtn.addEventListener('click', () => {
         editor.style.display = 'none';
         editorCSS.style.display = 'none';
         editorJS.style.display = 'block';
+
+        editorBtn.style.backgroundColor = 'white';
+        editorCSSBtn.style.backgroundColor = 'white';
+        editorJSBtn.style.backgroundColor = '#ADD8E6';
     });
 };
 
