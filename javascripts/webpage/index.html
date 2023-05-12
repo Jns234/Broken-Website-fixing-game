@@ -1,2 +1,33 @@
-<div>hello there</div>
-<button id="gif">this should be a gif</button>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Checkbox Strikethrough</title>
+	<style>
+		label {
+			display: block;
+		}
+		.strikethrough {
+			text-decoration: line-through;
+		}
+	</style>
+</head>
+<body>
+	<label>
+		<input type="checkbox" id="myCheckbox"> 
+		Some text here
+	</label>
+	
+	<script>
+		const checkbox = document.getElementById('myCheckbox');
+		const text = checkbox.parentNode;
+		
+		checkbox.addEventListener('change', function() {
+			if (this.checked) {
+				text.classList.add('strikethrough');
+			} else {
+				text.classList.remove('strikethrough');
+			}
+		});
+	</script>
+</body>
+</html>

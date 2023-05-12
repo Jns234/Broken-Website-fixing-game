@@ -64,7 +64,12 @@ window.onload = function () {
 };
 
 indexHTML = `<div>hello there</div>
-<button id="gif">this should be a gif</button>`;
+<button id="gif">this should be a gif</button>
+<label>
+<input type="checkbox" id="myCheckbox"> 
+Some text here
+</label>`
+;
 
 indexCSS = `* {
   color: blue;
@@ -72,9 +77,25 @@ indexCSS = `* {
 div {
   background-color : red;
 }
+label {
+  display: block;
+}
+.strikethrough {
+  text-decoration: line-through;
+}
 `
 indexJS = `var gif = output.querySelector("#gif");
 gif.addEventListener("click", function () {
     console.log("Clicked on the gif");
+});
+const checkbox = document.getElementById('myCheckbox');
+const text = checkbox.parentNode;
+
+checkbox.addEventListener('change', function() {
+  if (this.checked) {
+    text.classList.add('strikethrough');
+  } else {
+    text.classList.remove('strikethrough');
+  }
 });
 `

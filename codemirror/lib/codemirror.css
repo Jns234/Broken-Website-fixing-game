@@ -98,7 +98,9 @@
   top: 0; bottom: 0;
   position: absolute;
 }
-
+.cm-line-through {
+  text-decoration: line-through
+}
 /* DEFAULT THEME */
 
 .cm-s-default .cm-header {color: blue;}
