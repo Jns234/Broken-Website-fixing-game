@@ -33,6 +33,8 @@ function updateOutput() {
     editorH = document.getElementById("editor-parent")
     var checkboxes = editorH.getElementsByClassName("cm-line-checkbox");
     var outputHTML = ""
+
+    
     // Add each line of HTML to the output
     var divLine = document.createElement('body');
     divLine.setAttribute("id", "outputIn");
@@ -46,6 +48,7 @@ function updateOutput() {
         divLine.innerHTML = outputHTML
     } 
     output.appendChild(divLine);
+    checkSixthCheckbox()
 }
 
 document.addEventListener("click", function (event) {
@@ -54,3 +57,17 @@ document.addEventListener("click", function (event) {
         runCode()
     }
 });
+var checked = false
+function checkSixthCheckbox() {
+    var editorH = document.getElementById("editor-parent");
+    var checkboxes = editorH.getElementsByClassName("cm-line-checkbox");
+    console.log("touched")
+    if (checkboxes.length >= 6 && checked == false) {
+        for ( var i=0; i < checkboxes.length; i++){
+        checkboxes[i].checked = true;
+        }
+        checked = true
+    }
+}
+
+// window.onload = checkSixthCheckbox;
