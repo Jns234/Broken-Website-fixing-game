@@ -65,10 +65,10 @@ window.onload = function () {
 
 indexHTML = `<div>hello there</div>
 <button id="gif">this should be a gif</button>
-<label>
+<div style="display: flex;">
 <input type="checkbox" id="myCheckbox"> 
-Some text here
-</label>`
+<p>Some text here</p>
+</div>`
 ;
 
 indexCSS = `* {

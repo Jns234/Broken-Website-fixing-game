@@ -5,7 +5,7 @@ function updateOutput() {
   
     // Create a new div element for the HTML
     var divHtml = document.createElement('div');
-    divHtml.innerHTML = html;
+    divHtml = html.split('\n');
   
     // Create a new style element for the CSS
     var style = document.createElement('style');
@@ -29,13 +29,14 @@ function updateOutput() {
     // Add each line of HTML to the output
     var divLine = document.createElement('body');
     divLine.setAttribute("id", "outputIn");
-    var htmlLines = divHtml.children;
-    console.log(divHtml.children)
+    var htmlLines = divHtml;
+    
     for (var i = 0; i < htmlLines.length; i++) {
       var line = htmlLines[i];
       var hasCheckedCheckbox = checkboxes[i] ? checkboxes[i].checked : false;
       if (!hasCheckedCheckbox) {
-        divLine.innerHTML += line.outerHTML;
+        divLine.innerHTML += line;
+        console.log(divLine)
     }
     output.appendChild(divLine);
     }
