@@ -37,21 +37,20 @@ function updateOutput() {
     var divLine = document.createElement('body');
     divLine.setAttribute("id", "outputIn");
     var htmlLines = divHtml;
-    console.log(htmlLines)
     for (var i = 0; i < htmlLines.length; i++) {
         var line = htmlLines[i];
         var hasCheckedCheckbox = checkboxes[i] ? checkboxes[i].checked : false;
         if (!hasCheckedCheckbox) {
-            console.log(line)
             outputHTML += line;
         }
         divLine.innerHTML = outputHTML
-    } console.log("divline", outputHTML)
+    } 
     output.appendChild(divLine);
 }
 
 document.addEventListener("click", function (event) {
     if (event.target.classList.contains("cm-line-checkbox")) {
         updateOutput();
+        runCode()
     }
 });
