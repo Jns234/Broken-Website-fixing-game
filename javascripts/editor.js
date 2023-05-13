@@ -68,8 +68,9 @@ indexHTML = `<div>hello there</div>
 <div style="display: flex;">
 <input type="checkbox" id="myCheckbox"> 
 <p>Some text here</p>
-</div>`
-;
+</div>
+`
+
 
 indexCSS = `* {
   color: blue;
