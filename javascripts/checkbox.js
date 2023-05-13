@@ -1,14 +1,10 @@
-// window.onload = function () {
-//     const presentationSpans = document.querySelectorAll('span[role="presentation"]');
+// function checkSixthCheckbox() {
+//     var editorH = document.getElementById("editor-parent");
+//     var checkboxes = editorH.getElementsByClassName("cm-line-checkbox");
 
-// // Loop through each span element
-// presentationSpans.forEach(span => {
-//   // Create a new checkbox element
-//   const checkbox = document.createElement("input");
-//   checkbox.setAttribute("type", "checkbox");
-//   checkbox.setAttribute("id", "myCheckbox");
-
-//   // Add the checkbox as the first child element of the span
-//   span.insertBefore(checkbox, span.firstChild);
-// });
+//     if (checkboxes.length >= 6) {
+//         checkboxes[5].checked = true;
+//     }
 // }
+
+// window.onload = checkSixthCheckbox;

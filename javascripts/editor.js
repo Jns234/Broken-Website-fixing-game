@@ -69,6 +69,7 @@ indexHTML = `<div>hello there</div>
 <input type="checkbox" id="myCheckbox"> 
 <p>Some text here</p>
 </div>
+<img id="img" src="https://motionarray.imgix.net/preview-292305-SKZWKoY5Wm-high_0006.jpg?w=660&q=60&fit=max&auto=format">
 `
 
 

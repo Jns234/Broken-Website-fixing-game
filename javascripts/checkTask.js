@@ -2,7 +2,13 @@ let currentTaskIndex = 0;
 
 function checkTask(task) {
   const element = document.querySelector(task.targetElement);
-  const actualValue = getComputedStyle(element)[task.targetProperty];
+  let actualValue;
+  if (element instanceof HTMLImageElement || element instanceof HTMLIFrameElement) {
+    actualValue = element.src;
+  } else {
+    actualValue = getComputedStyle(element)[task.targetProperty];
+  }
+  console.log(element)
   const expectedValue = task.correctValue;
   if (actualValue === expectedValue) {
     console.log("Task " + task.id + " completed successfully!");
