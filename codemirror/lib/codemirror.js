@@ -1733,7 +1733,7 @@
     // rectangles for it (in measureChar).
     var content = eltP("span", null, null, webkit ? "padding-right: .1px" : null);
     var builder = {
-      pre: eltP("pre", [content], "CodeMirror-line"), content: content,
+      pre: eltP("pre", [content], "CodeMirror-line cm-line-through"), content: content,
       col: 0, pos: 0, cm: cm,
       trailingSpace: false,
       splitSpaces: cm.getOption("lineWrapping")
@@ -1790,9 +1790,13 @@
     checkbox.addEventListener("click", function (event) {
       // event.preventDefault();
       var lineEl = event.target.nextSibling;
+      console.log(lineEl)
       if (lineEl) {
         if (lineEl.classList.contains("cm-line-through")) {
+          console.log("here")
           lineEl.classList.remove("cm-line-through");
+      console.log(lineEl)
+
         } else {
           lineEl.classList.add("cm-line-through");
         }

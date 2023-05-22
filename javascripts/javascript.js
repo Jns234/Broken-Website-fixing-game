@@ -29,15 +29,15 @@ function runCode() {
     var code = editorJS.getValue(); // Get the JavaScript code from the editor
     codeLines = code.split('\n')
     for (var i = 0; i < codeLines.length; i++) {
-      var hasCheckedCheckboxJ = checkboxes[i] ? checkboxes[i].checked : false;
-      if (!hasCheckedCheckboxJ) {
+      var hasCheckedCheckboxJ = checkboxes[i] ? checkboxes[i].checked : true;
+      if (hasCheckedCheckboxJ) {
           finalCode += codeLines[i]
       }
   }
     try {
       eval(finalCode); // Execute the code
     } catch (error) {
-      console.error(error); // Log any errors to the console
+      console.error("propably not run js",error); // Log any errors to the console
     }
 }
 

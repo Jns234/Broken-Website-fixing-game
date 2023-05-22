@@ -98,7 +98,7 @@
   top: 0; bottom: 0;
   position: absolute;
 }
-.cm-line-through {
+.cm-line-through{
   text-decoration: line-through
 }
 /* DEFAULT THEME */

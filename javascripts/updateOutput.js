@@ -14,12 +14,12 @@ function updateOutput() {
     var style = document.createElement('style');
     var lines = css.split('\n');
     for (var i = 0; i < lines.length; i++) {
-        var hasCheckedCheckboxC = checkboxes[i] ? checkboxes[i].checked : false;
+        var hasCheckedCheckboxC = checkboxes[i] ? checkboxes[i].checked : true;
         var line = lines[i];
         if (/[\.\*#@\w].*.[{]/gm.test(line)) {
             lines[i] = '#outputIn > ' + line;
         }
-        if (!hasCheckedCheckboxC) {
+        if (hasCheckedCheckboxC) {
             style.innerHTML += lines[i]
         }
     }
@@ -41,14 +41,14 @@ function updateOutput() {
     var htmlLines = divHtml;
     for (var i = 0; i < htmlLines.length; i++) {
         var line = htmlLines[i];
-        var hasCheckedCheckbox = checkboxes[i] ? checkboxes[i].checked : false;
-        if (!hasCheckedCheckbox) {
+        var hasCheckedCheckbox = checkboxes[i] ? checkboxes[i].checked : true;
+        if (hasCheckedCheckbox) {
             outputHTML += line;
         }
         divLine.innerHTML = outputHTML
     } 
     output.appendChild(divLine);
-    checkSixthCheckbox()
+    // checkSixthCheckbox()
 }
 
 document.addEventListener("click", function (event) {
@@ -57,17 +57,17 @@ document.addEventListener("click", function (event) {
         runCode()
     }
 });
-var checked = false
-function checkSixthCheckbox() {
-    var editorH = document.getElementById("editor-parent");
-    var checkboxes = editorH.getElementsByClassName("cm-line-checkbox");
-    console.log("touched")
-    if (checkboxes.length >= 6 && checked == false) {
-        for ( var i=0; i < checkboxes.length; i++){
-        checkboxes[i].checked = true;
-        }
-        checked = true
-    }
-}
+// var checked = false
+// function checkSixthCheckbox() {
+//     var editorH = document.getElementById("editor-parent");
+//     var checkboxes = editorH.getElementsByClassName("cm-line-checkbox");
+//     console.log("touched")
+//     if (checkboxes.length >= 6 && checked == false) {
+//         for ( var i=0; i < checkboxes.length; i++){
+//         checkboxes[i].checked = true;
+//         }
+//         checked = true
+//     }
+// }
 
 // window.onload = checkSixthCheckbox;
