@@ -32,22 +32,72 @@
 
 <body>
   <div class="playground" style="position:relative;">
-    <div class="play line">
-      <div class="editor-select">
-        <button id="editor-btn" class="btn line">index.html</button>
-        <button id="editorCSS-btn" class="btn line">style.css</button>
-        <button id="editorJS-btn" class="btn line">index.js</button>
 
+    <!-- <div class="tabs">
+      <div class="tab">
+        <input type="radio" id="tab-1" name="tab-group-1" checked>
+        <label for="tab-1">index.html</label>
+        <div class="content">
+          <div id="editor-parent" class="edit">
+            <textarea id="editor"  placeholder="yes"></textarea>
+          </div>
+        </div>
       </div>
-      <div id="editor-parent" class="edit">
-        <textarea id="editor"  placeholder="yes"></textarea>
+      <div class="tab">
+        <input type="radio" id="tab-2" name="tab-group-1">
+        <label for="tab-2">style.css</label>
+        <div class="content">
+          <div id="editorCSS-parent" class="edit">
+            <textarea id="editorCSS"  placeholder="yes"></textarea>
+          </div>
+        </div>
       </div>
-      <div id="editorCSS-parent" class="edit">
-        <textarea id="editorCSS"  placeholder="yes"></textarea>
+      <div class="tab">
+        <input type="radio" id="tab-3" name="tab-group-1">
+        <label for="tab-3">index.js</label>
+        <div class="content">
+          <div id="editorJS-parent" class="edit">
+            <textarea id="editorJS"  placeholder="yes"></textarea>
+          </div>
+        </div>
       </div>
-      <div id="editorJS-parent" class="edit">
-        <textarea id="editorJS"  placeholder="yes"></textarea>
-      </div>
+    </div> -->
+
+    <div class="play line">
+        <!-- <button id="editor-btn" class="btn line">index.html</button>
+        <button id="editorCSS-btn" class="btn line">style.css</button>
+        <button id="editorJS-btn" class="btn line">index.js</button> -->
+
+        <div class="tabs">
+          <div class="tab">
+            <input type="radio" id="tab-1" name="tab-group-1" checked>
+            <label for="tab-1">index.html</label>
+            <div class="content">
+              <div id="editor-parent" class="edit">
+                <textarea id="editor"  placeholder="yes"></textarea>
+              </div>
+            </div>
+          </div>
+          <div class="tab">
+            <input type="radio" id="tab-2" name="tab-group-1">
+            <label for="tab-2">style.css</label>
+            <div class="content">
+              <div id="editorCSS-parent" class="edit">
+                <textarea id="editorCSS"  placeholder="yes"></textarea>
+              </div>
+            </div>
+          </div>
+          <div class="tab">
+            <input type="radio" id="tab-3" name="tab-group-1">
+            <label for="tab-3">index.js</label>
+            <div class="content">
+              <div id="editorJS-parent" class="edit">
+                <textarea id="editorJS"  placeholder="yes"></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+
     </div>
     <div id="output" style="max-height:100%;overflow:auto;" class="play line"></div>
   </div>
@@ -58,7 +108,7 @@
     </div>
     <div class="line buttons">
       <button id="checkTask">check</button>
-      <button id="run-code">Run Code</button>
+      <!-- <button id="run-code">Run Code</button> -->
     </div>
   </div>
 </body>

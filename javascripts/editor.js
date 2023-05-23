@@ -1,7 +1,7 @@
 window.onload = function () {
-  const editorBtn = document.getElementById('editor-btn');
-  const editorCSSBtn = document.getElementById('editorCSS-btn');
-  const editorJSBtn = document.getElementById('editorJS-btn');
+  // const editorBtn = document.getElementById('editor-btn');
+  // const editorCSSBtn = document.getElementById('editorCSS-btn');
+  // const editorJSBtn = document.getElementById('editorJS-btn');
   editor = CodeMirror.fromTextArea(document.getElementById("editor"), {
       lineNumbers: true,
       theme: "material",
@@ -42,21 +42,21 @@ window.onload = function () {
   updateOutput()
   editor.on('change', updateOutput);
   editorCSS.on('change', updateOutput);
-  editorJS.on('change', updateOutput);
-  editorLoad()
-  editorSelector()
-  editorBtn.addEventListener('click', () => {
-    editor.refresh();
-  });
+  editorJS.on('change', updateOutput, runCode());
+  // editorLoad()
+  // editorSelector()
+  // editorBtn.addEventListener('click', () => {
+  //   editor.refresh();
+  // });
 
-  // show editorCSS and hide editor when editorCSS button is pressed
-  editorCSSBtn.addEventListener('click', () => {
-    editorCSS.refresh();
-  });
+  // // show editorCSS and hide editor when editorCSS button is pressed
+  // editorCSSBtn.addEventListener('click', () => {
+  //   editorCSS.refresh();
+  // });
 
-  editorJSBtn.addEventListener('click', () => {
-    editorJS.refresh();
-  });
+  // editorJSBtn.addEventListener('click', () => {
+  //   editorJS.refresh();
+  // });
   editor.setValue(indexHTML);
   editorCSS.setValue(indexCSS);
   editorJS.setValue(indexJS)

@@ -1,11 +1,21 @@
 function checkCheckbox(editorName) {
-    checked = []
+    var checked = [];
     var editor = document.getElementById(editorName);
     var checkboxes = editor.getElementsByClassName("cm-line-checkbox");
-        for ( var i=0; i < checkboxes.length; i++){
-            if (checkboxes[i].checked = true) {
-                checked.push(i)
-            }
-        }
-    return checked
-}
+    console.log(checkboxes);
+  
+    for (var i = 0; i < checkboxes.length; i++) {
+      console.log(checkboxes[i].checked);
+      if (isChecked(checkboxes[i])) {
+        console.log(checkboxes[i].value)
+        checked.push(checkboxes[i].value);
+      }
+    }
+  
+    return checked;
+  }
+  
+  function isChecked(checkbox) {
+    return checkbox.checked || checkbox.getAttribute("checked") !== null;
+  }
+  

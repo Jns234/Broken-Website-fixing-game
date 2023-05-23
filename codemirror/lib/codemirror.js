@@ -1790,13 +1790,9 @@
     checkbox.addEventListener("click", function (event) {
       // event.preventDefault();
       var lineEl = event.target.nextSibling;
-      console.log(lineEl)
       if (lineEl) {
         if (lineEl.classList.contains("cm-line-through")) {
-          console.log("here")
           lineEl.classList.remove("cm-line-through");
-      console.log(lineEl)
-
         } else {
           lineEl.classList.add("cm-line-through");
         }
