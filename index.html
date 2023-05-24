@@ -15,8 +15,10 @@
   <script type="application/javascript" src="javascripts/tasks.js"></script>
   <script type="application/javascript" src="javascripts/checkTask.js"></script>
   <script type="application/javascript" src="javascripts/updateOutput.js"></script>
+  <script type="application/javascript" src="javascripts/form.js"></script>
   <script type="application/javascript" src="javascripts/file.js"></script>
   <script type="application/javascript" src="javascripts/checkbox.js"></script>
+  <script type="application/javascript" src="javascripts/popUp.js"></script>
   <script type="application/javascript" src="javascripts/javascript.js"></script>
   <script type="application/javascript" src="codemirror/addon/hint/show-hint.js"></script>
   <script type="application/javascript" src="codemirror/addon/hint/xml-hint.js"></script>
@@ -102,13 +104,31 @@
     <div id="output" style="max-height:100%;overflow:auto;" class="play line"></div>
   </div>
   <div class="line mission">
-    <div class="line task">
+    <div class="line task" id="task">
       <p>Task: <span id="taskNumber"></span></p>
       <p id="taskDescription"></p>
     </div>
-    <div class="line buttons">
-      <button id="checkTask">check</button>
-      <!-- <button id="run-code">Run Code</button> -->
+    <div class="line buttons" id="buttons">
+      <button class="form-button" id="checkTask">vasta</button>
+      <div id="formContainer" class="form-container">
+        <p class="respond">Vasta:</p>
+        <form id="responseForm">
+          <label for="row">Rida:</label>
+          <input type="number" id="row" name="row" required><br><br>
+        
+          <label for="why">Miks:</label><br>
+          <input type="radio" id="option1" name="why" value="Option 1" required>
+          <label id="option1desc" for="option1">Option 1</label><br>
+        
+          <input type="radio" id="option2" name="why" value="Option 2" required>
+          <label id="option2desc" for="option2">Option 2</label><br>
+        
+          <input type="radio" id="option3" name="why" value="Option 3" required>
+          <label id="option3desc" for="option3">Option 3</label><br><br>
+        
+          <button id="finalResp">Vasta</button>
+        </form>
+      </div>
     </div>
   </div>
 </body>
