@@ -28,16 +28,18 @@ function toggleForm() {
     // Access the form fields
     const rowField = document.getElementById("row");
     const whyField = document.querySelector('input[name="why"]:checked');
-  
+    const editorField = document.getElementById("editor-names")
     // Get the values from the form fields
     const row = rowField.value;
     const why = whyField.value;
     
-    selectedRow = rowField.value
+
+    selectedRow = rowField.value;
     selectedOption = whyField.value;
     // Do something with the form data
-    console.log("row: " + row);
-    console.log("why: " + why);
+    // console.log("row: " + row);
+    // console.log("why: " + why);
+    selectedEditor = editorField.value;
     
     checkOptionTask(currentTask)
 

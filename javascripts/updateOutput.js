@@ -71,3 +71,79 @@ document.addEventListener("click", function (event) {
 // }
 
 // window.onload = checkSixthCheckbox;
+
+// function showChecked() {
+//     var editorH = document.getElementById("editorCSS-parent");
+//     var checkboxes = editorH.getElementsByClassName("cm-line-checkbox");
+//     checkboxes[1].checked = true
+
+//     updateChecked()
+// }
+
+function preCheckBoxes(prechekcedRows) {
+    unCheckBoxes()
+    updateChecked()
+    console.log("got here")
+    var editorH = document.getElementById("editor-parent");
+    var checkboxesH = editorH.getElementsByClassName("cm-line-checkbox");
+    
+    var editorC = document.getElementById("editorCSS-parent");
+    var checkboxesC = editorC.getElementsByClassName("cm-line-checkbox");
+
+    var editorJ = document.getElementById("editorJS-parent");
+    var checkboxesJ = editorJ.getElementsByClassName("cm-line-checkbox");
+
+    editorCheck = prechekcedRows.editor.split(",")
+    editorCSSCheck = prechekcedRows.editorCSS.split(",")
+    editorJSCheck = prechekcedRows.editorJS.split(",")
+
+    // console.log(editorCheck)
+    // console.log(editorCSSCheck)
+    // console.log(editorJSCheck)
+    // updateChecked()
+    for (i = 0; i < editorCheck.length; i++){
+        if (editorCheck.length > 1){
+        checkboxesH[editorCheck[i]].checked = true}
+    }
+    for (i = 0; i < editorCSSCheck.length; i++){
+        if (editorCSSCheck.length > 1){
+            checkboxesC[editorCSSCheck[i]].checked = true}
+    }
+    for (i = 0; i < editorJSCheck.length; i++){
+        if (editorJSCheck.length > 1){
+        checkboxesJ[editorJSCheck[i]].checked = true}
+    }
+    updateChecked()
+}
+
+
+function updateChecked() {
+    const checkBoxed = document.querySelectorAll('.cm-line-checkbox');
+    
+    const event = new Event('change');
+    
+    updateOutput()
+    checkBoxed.forEach(checkbox => {
+      checkbox.dispatchEvent(event);
+    });
+}
+
+function unCheckBoxes() {
+    console.log("uncheck")
+    var checkboxes = document.getElementsByClassName("cm-line-checkbox")
+    for (i = 0; i< checkboxes.length; i++) {
+        checkboxes[i].checked = false
+    }
+    updateChecked()
+}
+
+function updateUnchecked() {
+    const checkBoxed = document.querySelectorAll('.cm-line-checkbox:unchecked');
+    
+    const event = new Event('change');
+    
+    updateOutput()
+    checkBoxed.forEach(checkbox => {
+      checkbox.dispatchEvent(event);
+    });
+}

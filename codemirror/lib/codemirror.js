@@ -1787,17 +1787,17 @@
     builder.pre = label;
 
     // Add event listener to toggle text-decoration when checkbox is clicked
-    checkbox.addEventListener("click", function (event) {
-      // event.preventDefault();
+    checkbox.addEventListener("change", function (event) {
       var lineEl = event.target.nextSibling;
-      if (lineEl) {
-        if (lineEl.classList.contains("cm-line-through")) {
-          lineEl.classList.remove("cm-line-through");
-        } else {
-          lineEl.classList.add("cm-line-through");
-        }
+      var checkEl = event.target;
+    
+      if (checkEl.checked) {
+        lineEl.classList.remove("cm-line-through");
+      } else {
+        lineEl.classList.add("cm-line-through");
       }
     });
+    
 
     signal(cm, "renderLine", cm, lineView.line, builder.pre);
     if (builder.pre.className) { builder.textClass = joinClasses(builder.pre.className, builder.textClass || ""); }

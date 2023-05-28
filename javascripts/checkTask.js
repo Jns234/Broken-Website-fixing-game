@@ -11,6 +11,9 @@ let selectedOption = ""
 let actualOption = ""
 let expectedValue = ""
 let actualValue = ""
+let acutalEditor = ""
+let selectedEditor = ""
+
 function checkTask(task) {
   checkComputedTask(task)
   console.log("what expect", expectedValue)
@@ -19,15 +22,19 @@ function checkTask(task) {
 function checkOptionTask(task) {
   actualOption = task.correctOption
   actualRow = task.correctRow
-  if (actualValue === expectedValue && selectedOption === actualOption && selectedRow === actualRow) {
+  acutalEditor = task.correctEditor
+  if (actualValue === expectedValue && selectedOption === actualOption && selectedRow === actualRow && selectedEditor === acutalEditor) {
     console.log("Task " + task.id + " completed successfully!");
+    // unCheckBoxes()
+    popUp(3)
     toggleForm()
+    resetValues()
     currentTaskIndex++;
     if (currentTaskIndex < tasks.length) {
+      // unCheckBoxes()
       updateTaskDescription(currentTaskIndex);
       updateTaskOptions(currentTaskIndex);
       resetValues()
-      popUp(3)
       // If there are more tasks, show the next task
       const nextTask = tasks[currentTaskIndex];
       console.log("Next task:", nextTask);
@@ -49,17 +56,23 @@ function checkOptionTask(task) {
 function checkComputedTask(task) {
   
   const element = document.querySelector(task.targetElement);
-  if (element instanceof HTMLImageElement || element instanceof HTMLIFrameElement) {
+  if (element instanceof HTMLImageElement || element instanceof HTMLIFrameElement ) {
     actualValue = element.src;
+    console.log("the element:",element, " the actual value:", actualValue)
   } else {
    try{
-    actualValue = getComputedStyle(element)[task.targetProperty];}
+     actualValue = getComputedStyle(element)[task.targetProperty];
+     console.log(element)
+     console.log(task.targetProperty)
+     console.log("actual:",actualValue)
+    }
     catch {
       popUp(1)
     }
   }
   expectedValue = task.correctValue;
   console.log(expectedValue);
+  console.log(actualValue);
 
   if (actualValue === expectedValue) {
     console.log("act = exp")
@@ -67,11 +80,11 @@ function checkComputedTask(task) {
   }
   else{
     console.log("poop")
+    popUp(1)
   }
 }
 
 function updateTaskOptions(taskIndex) {
-  console.log("option");
   const task = tasks[taskIndex];
   const option1Element = document.getElementById("option1desc");
   const option2Element = document.getElementById("option2desc");
@@ -88,6 +101,7 @@ window.addEventListener("load", function () {
   check.addEventListener("click", () => {
     const currentTask = tasks[currentTaskIndex];
     console.log(currentTaskIndex);
+    // showChecked()
     // toggleForm();
     updateTaskOptions(currentTaskIndex);
     checkTask(currentTask);
@@ -99,9 +113,12 @@ window.addEventListener("load", function () {
 
 
 function updateTaskDescription(taskIndex) {
+  
   const task = tasks[taskIndex];
   const taskDescriptionElement = document.getElementById("taskDescription");
   taskDescriptionElement.innerHTML = task.description;
+  // unCheckBoxes()
+  preCheckBoxes(task.preCheckRow)
 
 }
 
@@ -112,4 +129,6 @@ function resetValues() {
   actualValue = ""
   actualRow = ""
   selectedRow = ""
+  acutalEditor = ""
+  selectedEditor = ""
 }

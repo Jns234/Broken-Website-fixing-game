@@ -1,7 +1,28 @@
-* {
-    color: blue;
+#tabButton1,
+#tabButton2,
+#tabButton3 {
+  padding: 10px;
+  background-color: lightblue;
+  border: none;
+  cursor: pointer;
 }
-div {
-    background-color : red;
+
+#tabButton1.active,
+#tabButton2.active,
+#tabButton3.active {
+  background-color: blue;
+  color: white;
 }
-  
+
+#tabPane1,
+#tabPane2,
+#tabPane3 {
+  display: none;
+  padding: 10px;
+}
+
+#tabPane1.active,
+#tabPane2.active,
+#tabPane3.active {
+  display: block;
+}

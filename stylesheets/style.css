@@ -146,3 +146,10 @@ border: 1px solid #bfbfbf !important;
   width: 20%;
   height: 20%;
 }
+
+.selectLineFile {
+  display: flex;
+}
+.editorsSelect {
+  margin-left: 10%;
+}

@@ -109,12 +109,23 @@
       <p id="taskDescription"></p>
     </div>
     <div class="line buttons" id="buttons">
-      <button class="form-button" id="checkTask">vasta</button>
+      <button class="form-button" id="checkTask">Vasta</button>
       <div id="formContainer" class="form-container">
         <p class="respond">Vasta:</p>
         <form id="responseForm">
-          <label for="row">Rida:</label>
-          <input type="number" id="row" name="row" required><br><br>
+          <div class="selectLineFile">
+            <div>
+              <label for="row">Rida:</label>
+              <input type="number" id="row" name="row" required><br><br>
+            </div>
+            <div class="editorsSelect"><label for="editors">Mis fail?:</label> 
+              <select name="editor-names" id="editor-names"> 
+                  <option value="blank"></option> 
+                  <option value="editorHTML">index.html</option> 
+                  <option value="editorCSS">style.css</option> 
+                  <option value="editorJS">index.js</option> 
+              </select></div>
+          </div>
         
           <label for="why">Miks:</label><br>
           <input type="radio" id="option1" name="why" value="Option 1" required>
